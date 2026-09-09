@@ -17,7 +17,7 @@ app.post('/webhook', async (req, res) => {
                 const telegramUrl = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
                 await axios.post(telegramUrl, {
                     chat_id: TELEGRAM_CHAT_ID,
-                    text: '📢 มีข้อความจาก LINE:\n\n${userMessage}'
+                    text: `📢 มีข้อความจาก LINE:\n\n${userMessage}`
                 });
             }
         }
