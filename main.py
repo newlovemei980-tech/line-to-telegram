@@ -17,7 +17,7 @@ line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 def send_to_telegram(text_message):
-    telegram_url = f"https://telegram.org{TELEGRAM_BOT_TOKEN}/sendMessage"
+    telegram_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {"chat_id": TELEGRAM_CHAT_ID, "text": text_message, "parse_mode": "Markdown"}
     try:
         response = requests.post(telegram_url, json=payload)
