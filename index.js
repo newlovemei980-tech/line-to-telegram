@@ -17,7 +17,7 @@ app.post('/webhook', async (req, res) => {
                     const userMessage = event.message.text;
                     
                     // แก้ไขลิงก์ส่งข้อความของ Telegram API ให้ถูกต้อง
-                    const telegramUrl = `https://telegram.org{TELEGRAM_TOKEN}/sendMessage`;
+                    const telegramUrl = `https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage`;
                     
                     await axios.post(telegramUrl, {
                         chat_id: TELEGRAM_CHAT_ID,
